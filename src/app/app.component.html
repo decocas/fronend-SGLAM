@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+  <ul class="navbar-nav">
+    <!-- Brand -->
+    <li class="nav-item active">
+      <a class="nav-link " role="button" routerlink="manager" routerLinkActive="active" (click)="manager()">SGALM</a>
+    </li>
+    <div class="container mt-3">    
+      <div class="d-flex justify-content-between  mb-3"></div>
+    </div>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown ">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+      <span class="glyphicon glyphicon-user"></span> User 
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Ver información</a>
+        <a class="dropdown-item" href="#">Cerrar sesión</a>
+      </div>
+    </li>
+  </ul> 
+</nav><!--
+<app-manager></app-manager>-->
+<router-outlet></router-outlet>
