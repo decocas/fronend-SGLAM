@@ -17,5 +17,9 @@ export class ManagerComponent implements OnInit {
     this.r.navigate(['/receipt']);
   }
 
+  outlet(){
+    this.r.navigate(['/outlet']);
+
+  }
 
 }

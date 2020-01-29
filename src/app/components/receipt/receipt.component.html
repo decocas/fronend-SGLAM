@@ -46,34 +46,34 @@
 		<aside class="col-md-6">
 			<!-- Formulario con ingreso de datos -->
       <h4>Aqui el formulario de registro clientes</h4>
-      <form>
+      <form #formulario=ngForm (ngSubmit)="registrarCliente(formulario)">
         <div class="form-row"> 
           <div class="form-group col-sm-5">
             <label>Nit</label>
-            <input type="text" class="form-control" name="nit"
-             placeholder="NIT" required>
+            <input type="text" class="form-control" name="nit" #nit="ngModel"
+             [(ngModel)]=o.c.nit placeholder="NIT" required>
           </div>
           <div class="form-group col-sm-6">
               <label>Nombre</label>
-              <input type="text" class="form-control" name="nombre" 
-         placeholder="Nombre" required>          
+              <input type="text" class="form-control" name="nombre" #nombre="ngModel" 
+          [(ngModel)]=o.c.nombre placeholder="Nombre" required>          
           </div>
           <div class="form-group col-sm-6">
             <label>Responsable</label>
-            <input type="text" class="form-control" name="responsable" 
-         placeholder="Responsable" required>
+            <input type="text" class="form-control" name="responsable" #responsable="ngModel" 
+           [(ngModel)]=o.c.responsable placeholder="Responsable" required>
               </div>
         </div>
         <div class="form-row">
            <div class="form-group col-sm-6">
           <label>Telefono</label>
-          <input type="tel" value="1-(555)-555-5555" class="form-control" name="telefono" 
-       placeholder="Telefono" required>
+          <input type="tel"  class="form-control" name="telefono" #telefono="ngModel" 
+            [(ngModel)]=o.c.telefono placeholder="1-(555)-555-5555" value="1-(555)-555-5555" required>
             </div>
             <div class="form-group col-sm-6">
               <label>Correo</label>
-              <input type="mail" class="form-control" name="mail" 
-           placeholder="@correo" required>
+              <input type="mail" class="form-control" name="mail" #mail="ngModel" 
+               [(ngModel)]=o.c.mail placeholder="@correo" required>
                 </div>
                 </div>
                 <div class="form-action-row" >
@@ -89,68 +89,79 @@
       <span><hr></span>    
       <aside class="col-md-7">
         <h4>Aqui el formulario de registro Entradas</h4>
-        <form>
+        <form #formulario=ngForm (ngSubmit)="getCliente(formulario)">
+          <input type="text" class="form-control" name="_id"
+          #_id="ngModel" [(ngModel)]=o.c._id    placeholder="id" required>
+          <div class="form-action-row" >
+            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok">entrar</i></button>
+            <button type="reset" class="btn btn-danger"><i class="glyphicon glyphicon-remove">cancelar</i> </button> 
+            
+           </div>
+        </form>
+        <form *ngIf="c" #formulario=ngForm (ngSubmit)="registrarEntrada(formulario)">
+          <input type="text" class="form-control" name="_id"
+            #_id="ngModel" [(ngModel)]=o.c._id    placeholder="id" required>
           <div class="form-row"> 
             <div class="form-group col-md-4">
               <label>Numero Orden</label>
-              <input type="text" class="form-control" name="orderNumber"
-               placeholder="# Orden" required>
+              <input type="text" ngModel class="form-control" name="orderNumber"
+               placeholder="# Orden" #orderNumber="ngModel" required>
             </div>
             <div class="form-group col-md-4">
                 <label>Lote</label>
-                <input type="text" class="form-control" name="lote" 
-           placeholder="Numero Lote" required>          
+                <input type="text" ngModel class="form-control" name="lote" 
+           placeholder="Numero Lote" #lote="ngModel" required>          
             </div>
             <div class="form-group col-md-4">
               <label>Codigo Producto</label>
-              <input type="text" class="form-control" name="codigo_producto" 
-           placeholder="Cod Producto" required>
+              <input type="text" ngModel class="form-control" name="codigo_producto" 
+           placeholder="Cod Producto" #codigo_producto="ngModel" required>
                 </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
               <label>Referencia</label>
-              <input type="text" class="form-control" name="referencia"
-               placeholder="Referencia" required>
+              <input type="text" ngModel class="form-control" name="referencia"
+               placeholder="Referencia" #referencia="ngModel" required>
             </div>
             <div class="form-group col-md-4">
                 <label>Cantidad Buen Estado</label>
-                <input type="number" min="0" class="form-control" name="cantidad_buen_estado" 
-           placeholder="Cantidad Intacta" required>          
+                <input type="number" ngModel min="0" class="form-control" name="cantidad_buen_estado" 
+           placeholder="Cantidad Intacta" #cantidad_buen_estado="ngModel" required>          
             </div>
             <div class="form-group col-md-4">
               <label>Cantidad Mal Estado</label>
-                <input type="number" min="0" class="form-control" name="cantidad_mal_estado" 
-           placeholder="Cantidad Dañada" required>
+                <input type="number" ngModel min="0" class="form-control" name="cantidad_mal_estado" 
+           placeholder="Cantidad Dañada" #cantidad_mal_estado="ngModel" required>
                 </div>          
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-4">
                       <label>Codigo ONU</label>
-                      <input type="text" class="form-control" name="codigo_ONU"
-                       placeholder="ONU" required>
+                      <input type="text" ngModel class="form-control" name="codigo_ONU"
+                      #codigo_ONU="ngModel" placeholder="ONU" required>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Serial Container</label>
-                        <input type="text" class="form-control" name="serial_container" 
-                   placeholder="Serial" required>          
+                        <input type="text" ngModel class="form-control" name="serial_container" 
+                   placeholder="Serial" #serial_container="ngModel" required>          
                     </div>
                     <div class="form-group col-md-4">
                       <label>Fecha Fabricacion</label>
-                      <input type="date"  max="2020-12-31" class="form-control" name="fecha_fabricacion" 
-                   placeholder="fecha fabrica" required>
+                      <input type="date" ngModel  max="2020-12-31" class="form-control" name="fecha_fabricacion" 
+                   placeholder="fecha fabrica" #fecha_fabricacion="ngModel" required>
                         </div>    
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-4">
                         <label>Fecha Caducidad</label>
-                        <input type="date" min="2020-01-29" class="form-control" name="fecha_caducidad"
-                         placeholder="Fecha Caducidad" required>
+                        <input type="date" ngModel min="2020-01-29" class="form-control" name="fecha_caducidad"
+                         placeholder="Fecha Caducidad" #fecha_caducidad="ngModel" required>
                       </div>
                       <div class="form-group col-md-4">
                           <label>Fecha Entrada</label>
-                          <input type="date" max="2020-12-31" class="form-control" name="fecha_entrada" 
-                     placeholder="Fecha Entrada" required>          
+                          <input type="date" ngModel max="2020-12-31" class="form-control" name="fecha_entrada" 
+                     placeholder="Fecha Entrada" #fecha_entrada="ngModel" required>          
                       </div>
                       
                     </div>

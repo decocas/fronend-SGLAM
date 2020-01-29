@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ManagerComponent } from './components/manager/manager.component';
 import { ReceiptComponent } from './components/receipt/receipt.component';
 import { FormsModule } from '@angular/forms';
+import { OutletComponent } from './components/outlet/outlet.component';
 @NgModule({
   declarations: [
     AppComponent,
     ManagerComponent,
-    ReceiptComponent
+    ReceiptComponent,
+    OutletComponent
   ],
   imports: [
     BrowserModule,

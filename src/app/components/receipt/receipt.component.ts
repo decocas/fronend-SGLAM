@@ -19,6 +19,33 @@ export class ReceiptComponent implements OnInit {
             .subscribe(res=>{
               console.log(res);
             });
-
+              formulario.reset();
+              this.o.c=new Client();
           }
+
+          registrarEntrada(formulario?:NgForm){
+            
+          if(formulario.value._id){
+              this.o.crearEntrada(formulario.value)
+              .subscribe(res=>{
+               
+                console.log(res);
+                console.log(formulario.value);
+              });
+              formulario.reset();
+          }
+          }
+
+          getCliente(formulario:NgForm){
+            console.log(formulario.value._id);
+            this.o.buscarId(formulario.value._id)
+            .subscribe(res=>{
+              this.c= res as Client;
+              formulario.reset();
+            })
+          }
+
+
+
+
 }

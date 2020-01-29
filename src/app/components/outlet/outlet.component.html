@@ -1,0 +1,101 @@
+<div class="container">
+	<br>  
+	<h1 class="text-center">Registro de salidas</h1>
+	<hr>
+
+	<div class="row">
+		<aside class="col-sm-6">
+	        <h4>Listado de clientes</h4>
+	        <form action="#" method="get">
+                <div class="input-group">
+                    <!-- USE NIT TO SEARCH -->
+                    <input class="form-control" id="search-nit" name="search-nit" 
+                    	placeholder="Search for NIT" required>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" >
+                        	<i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
+
+	        <div class="table-responsive">	                
+            	<table id="mytable" class="table table-bordred table-striped">
+	              	<thead>
+	              		<th><input type="checkbox" id="checkall" /></th>
+	                   	<th>Nit.</th>
+	                    <th>Razon social</th>
+	                    <th>Contacto</th>
+	                    <th>Email</th>
+	                    <th>Telefono</th>
+	                </thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" class="checkthis" /></td>
+							<td>1338854-3</td>
+							<td>Trululu</td>
+							<td>Juan Esteban</td>
+							<td>isometric.mohsin@gmail.com</td>
+							<td>+923335586757</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" class="checkthis" /></td>
+							<td>1338854-3</td>
+							<td>Trululu</td>
+							<td>Juan Esteban</td>
+							<td>isometric.mohsin@gmail.com</td>
+							<td>+923335586757</td>
+						</tr>
+		    		</tbody>
+	    		</table>
+	    	</div>
+		</aside> <!-- col.// -->
+
+		<aside class="col-sm-5">
+			<!-- Formulario con ingreso de datos -->
+      <h4>Aqui el formulario de registro</h4>
+      <form >
+        <div class="form-row">
+          <div  class="form-goup col-sm-5">
+            <label>Numero Orden</label>
+            <input type="tet" class="form-control" name="orderNumber" placeholder="# Orden" required>
+          </div>
+          <div class="form-goup col-sm-5">
+            <label>Lote</label>
+            <input type="text" class="form-control" name="lote" placeholder="# Lote" required>
+          </div>
+          <div class="form-goup col-sm-5">
+            <label>Codigo Producto</label>
+            <input type="text" class="form-control" name="codigo_producto" placeholder="Codigo Producto" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-5">
+            <label>Referencia</label>
+            <input type="text" class="form-control" name="referencia" placeholder="Referencia" required>
+          </div>
+          <div class="form-group col-sm-5">
+            <label>Fecha Caducidad</label>
+            <input type="date" class="form-control" min="2020-01-29" name="fecha_caducidad" placeholder="Fecha Caducidad" required>
+          </div>
+          <div class="form-goup col-sm-5">
+            <label>Cantidad</label>
+            <input type="number" min="1" class="form-control" name="cantidad" placeholder="Cantidad" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-5">
+            <label>Codigo ONU</label>
+            <input type="text" class="form-control" name="codigo_ONU" placeholder="Codigo ONU" required>
+          </div>           
+          <div class="form-group col-sm-5">
+            <label>Fecha Salida</label>
+            <input type="date" class="form-control" min="2020-01-29" max="2020-12-31" name="fecha_salida" placeholder="Fecha Salida" required>
+          </div>
+          </div>  
+      </form>
+		</aside> <!-- col.// -->
+	</div> <!-- row.// -->
+
+</div> <!-- container.// -->
+

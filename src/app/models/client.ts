@@ -1,4 +1,5 @@
 export class Client {
+  _id: any;
     constructor(nombre='',nit='',responsable='',telefono='',mail=''){
         this.nombre=nombre;
         this.nit=nit;
