@@ -54,46 +54,62 @@
 		<aside class="col-sm-5">
 			<!-- Formulario con ingreso de datos -->
       <h4>Aqui el formulario de registro</h4>
-      <form >
+      <form #formulario="ngForm" (ngSubmit)="registrarSalida(formulario)">
+        <label>Id</label>
+            <input type="text" class="form-control" name="_id" 
+            #_id="ngModel" [(ngModel)]=o.c._id placeholder="ID" required>
         <div class="form-row">
           <div  class="form-goup col-sm-5">
             <label>Numero Orden</label>
-            <input type="tet" class="form-control" name="orderNumber" placeholder="# Orden" required>
+            <input type="text" class="form-control" ngModel name="orderNumber"
+              #orderNumber="ngModel" placeholder="# Orden" required>
           </div>
           <div class="form-goup col-sm-5">
             <label>Lote</label>
-            <input type="text" class="form-control" name="lote" placeholder="# Lote" required>
+            <input type="text" class="form-control" ngModel name="lote"
+              #lote="ngModel" placeholder="# Lote" required>
           </div>
           <div class="form-goup col-sm-5">
             <label>Codigo Producto</label>
-            <input type="text" class="form-control" name="codigo_producto" placeholder="Codigo Producto" required>
+            <input type="text" class="form-control" ngModel name="codigo_producto" 
+             #codigo_producto="ngModel" placeholder="Codigo Producto" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-sm-5">
             <label>Referencia</label>
-            <input type="text" class="form-control" name="referencia" placeholder="Referencia" required>
+            <input type="text" class="form-control" ngModel name="referencia" 
+             #referencia="ngModel" placeholder="Referencia" required>
           </div>
           <div class="form-group col-sm-5">
             <label>Fecha Caducidad</label>
-            <input type="date" class="form-control" min="2020-01-29" name="fecha_caducidad" placeholder="Fecha Caducidad" required>
+            <input type="date" class="form-control" min="2020-01-29" ngModel 
+            #fecha_caducidad="ngModel" name="fecha_caducidad" placeholder="Fecha Caducidad" required>
           </div>
           <div class="form-goup col-sm-5">
             <label>Cantidad</label>
-            <input type="number" min="1" class="form-control" name="cantidad" placeholder="Cantidad" required>
+            <input type="number" min="1" class="form-control" ngModel name="cantidad"
+              #cantidad="ngModel" placeholder="Cantidad" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-sm-5">
             <label>Codigo ONU</label>
-            <input type="text" class="form-control" name="codigo_ONU" placeholder="Codigo ONU" required>
+            <input type="text" class="form-control" ngModel name="codigo_ONU"
+              #codigo_ONU="ngModel" placeholder="Codigo ONU" required>
           </div>           
           <div class="form-group col-sm-5">
             <label>Fecha Salida</label>
-            <input type="date" class="form-control" min="2020-01-29" max="2020-12-31" name="fecha_salida" placeholder="Fecha Salida" required>
+            <input type="date" class="form-control" ngModel min="2020-01-29" max="2020-12-31" 
+            name="fecha_salida" #fecha_salida="ngModel" placeholder="Fecha Salida" required>
           </div>
-          </div>  
-      </form>
+          </div>
+          <div class="form-action-row" >
+            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok">entrar</i></button>
+            <button type="reset" class="btn btn-danger"><i class="glyphicon glyphicon-remove">cancelar</i> </button> 
+        
+           </div>
+         </form>
 		</aside> <!-- col.// -->
 	</div> <!-- row.// -->
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OperationsService } from 'src/app/services/operations.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-outlet',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutletComponent implements OnInit {
 
-  constructor() { }
+  constructor(private o: OperationsService) { }
 
   ngOnInit() {
   }
+
+
+  registrarSalida(formulario:NgForm){
+    
+      if(formulario.value._id){
+        this.o.crearSalida(formulario.value)
+        .subscribe(res=>{
+          console.log(res);
+          console.log(formulario.value);
+        });
+
+        formulario.reset();
+      }
+  }
+
 
 }

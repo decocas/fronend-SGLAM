@@ -19,7 +19,10 @@ export class ManagerComponent implements OnInit {
 
   outlet(){
     this.r.navigate(['/outlet']);
+  }
 
+  search(){
+    this.r.navigate(['/search']);
   }
 
 }

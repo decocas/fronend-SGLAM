@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,25 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'expreson';
 
-  constructor( private r:Router,){
+  constructor( private r:Router,
+              private l:LoginService){
 
   }
 
   manager(){
     this.r.navigate(['/manager']);
+
+  }
+
+  login(){
+    this.r.navigate(['/login']);
+  }
+
+  cerrar(){
+    if(this.l.flag){
+      this.l.logout();
+    }else{
+      this.r.navigate(['/login']);
+    }
   }
 }

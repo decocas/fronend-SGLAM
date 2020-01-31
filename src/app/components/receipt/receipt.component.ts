@@ -15,13 +15,17 @@ export class ReceiptComponent implements OnInit {
   ngOnInit() {
   }
           registrarCliente(formulario:NgForm){
+            
             this.o.crearCliente(formulario.value)
             .subscribe(res=>{
+              console.log(formulario.value);
               console.log(res);
             });
-              formulario.reset();
+            console.log(formulario.value);
+            formulario.reset();
               this.o.c=new Client();
-          }
+         
+            }
 
           registrarEntrada(formulario?:NgForm){
             

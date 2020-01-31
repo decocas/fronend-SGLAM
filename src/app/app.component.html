@@ -14,11 +14,11 @@
       <span class="glyphicon glyphicon-user"></span> User 
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Ver información</a>
-        <a class="dropdown-item" href="#">Cerrar sesión</a>
+        <a class="dropdown-item" role="button" routerlink="manager"(click)="login()" >Login</a>
+        <a class="dropdown-item" role="button" (click)="cerrar()">Cerrar sesión</a>
       </div>
     </li>
   </ul> 
 </nav><!--
-<app-manager></app-manager>-->
+<app-login></app-login>-->
 <router-outlet></router-outlet>

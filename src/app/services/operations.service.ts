@@ -6,13 +6,16 @@ import { Client } from '../models/client';
 })
 export class OperationsService {
   c:Client;
+  lista:Client[];
   a:any={};
   constructor(private http: HttpClient) { this.c=new Client();
   }
   
 
-  ruta="http://localhost:3000/api/rest/sglam";
+ruta="http://localhost:3000/api/rest/sglam";
 ruta2="http://localhost:3000/api/rest/sglam/entradas";
+ruta3="http://localhost:3000/api/rest/sglam/salidas";
+
   crearCliente(c:Client){
     return this.http.post(this.ruta,c);
   }
@@ -21,7 +24,15 @@ ruta2="http://localhost:3000/api/rest/sglam/entradas";
   }
   buscarId(id:string){
     return this.http.get(this.ruta + `/${id}`);
-  }      
+  }
+  
+  crearSalida(c:Client){
+    return this.http.put(this.ruta3 + `/${c._id}`,c);
+  }
+
+  buscar(){
+    return this.http.get(this.ruta);
+  }
 
 
 }

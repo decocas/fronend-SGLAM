@@ -46,12 +46,12 @@
 		<aside class="col-md-6">
 			<!-- Formulario con ingreso de datos -->
       <h4>Aqui el formulario de registro clientes</h4>
-      <form #formulario=ngForm (ngSubmit)="registrarCliente(formulario)">
+      <form #formulario="ngForm" (ngSubmit)="registrarCliente(formulario)">
         <div class="form-row"> 
           <div class="form-group col-sm-5">
             <label>Nit</label>
             <input type="text" class="form-control" name="nit" #nit="ngModel"
-             [(ngModel)]=o.c.nit placeholder="NIT" required>
+              [(ngModel)]=o.c.nit placeholder="NIT" required>
           </div>
           <div class="form-group col-sm-6">
               <label>Nombre</label>
@@ -68,7 +68,7 @@
            <div class="form-group col-sm-6">
           <label>Telefono</label>
           <input type="tel"  class="form-control" name="telefono" #telefono="ngModel" 
-            [(ngModel)]=o.c.telefono placeholder="1-(555)-555-5555" value="1-(555)-555-5555" required>
+            [(ngModel)]=o.c.telefono placeholder="1-(555)-555-5555" required>
             </div>
             <div class="form-group col-sm-6">
               <label>Correo</label>
@@ -84,7 +84,7 @@
           </form> 
 
     </aside> <!-- col.// -->
-            <!--Entrada-->
+            <!--Entrada
     <div class="col-lg-10"> 
       <span><hr></span>    
       <aside class="col-md-7">
@@ -97,8 +97,9 @@
             <button type="reset" class="btn btn-danger"><i class="glyphicon glyphicon-remove">cancelar</i> </button> 
             
            </div>
-        </form>
+        </form><br>
         <form *ngIf="c" #formulario=ngForm (ngSubmit)="registrarEntrada(formulario)">
+          <label>Id</label>
           <input type="text" class="form-control" name="_id"
             #_id="ngModel" [(ngModel)]=o.c._id    placeholder="id" required>
           <div class="form-row"> 
@@ -177,7 +178,7 @@
 
       </aside>
 
-    </div>
+    </div>-->
     
       
     
