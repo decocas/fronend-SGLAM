@@ -25,4 +25,8 @@ export class ManagerComponent implements OnInit {
     this.r.navigate(['/search']);
   }
 
+  report(){
+    this.r.navigate(['/report'])
+  }
+
 }

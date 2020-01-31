@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ReportComponent } from './components/report/report.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     ReceiptComponent,
     OutletComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    ReportComponent
   ],
   imports: [
     AngularFireAuthModule,

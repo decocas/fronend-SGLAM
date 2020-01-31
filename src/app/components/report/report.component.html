@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-lg-8">
 	        <h4>Listado de clientes</h4>
-	        <form #formulario="ngForm" (ngSubmit)="listarId(formulario)">
+	        <form #formulario="ngForm" (ngSubmit)="salida_id(formulario)" (ngSubmit)="listarId(formulario)">
                 <div class="input-group">
                     <!-- USE NIT TO SEARCH -->
                     <input class="form-control col-sm-4" id="search-nit" name="_id" 
@@ -53,21 +53,20 @@
 						  <th>Lote</th>
 						  <th>Referencia</th>
 						  <th>Cantidad</th>
-						  <th>Cantida Deteriorada</th>
-					  <th>Fecha Caducidad</th>
+						   <th>Fecha Caducidad</th>
+						 <th>Fecha Salida</th>
 					
 	                </thead>
 					<tbody>
-						<tr *ngFor="let l of c.mercancia">
+						<tr *ngFor="let l of a">
 							<td><input type="checkbox" class="checkthis" /></td>
-							<td>{{c.mercancia}}</td>
-							<td>{{a.code}}</td>
-							<td>{{a.lote}}</td>
-							<td>{{a.referencia}}</td>
-							<td>{{a.cantidad}}</td>
-							<td>{{a.cantidad_deteriorada}}</td>
-							<td>{{a.fecha_caducidad}}</td>
-						
+							<td>{{l.codigo_ONU}}</td>
+							<td>{{l.codigo_producto}}</td>
+							<td>{{l.lote}}</td>
+							<td>{{l.referencia}}</td>
+							<td>{{l.cantidad}}</td>
+							<td>{{l.fecha_caducidad}}</td>
+							<td>{{l.fecha_salida}}</td>						
 						</tr>
 						</tbody>
 	    		</table>

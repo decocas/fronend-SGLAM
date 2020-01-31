@@ -34,5 +34,13 @@ ruta3="http://localhost:3000/api/rest/sglam/salidas";
     return this.http.get(this.ruta);
   }
 
+  salidaId(id:string){
+    return this.http.get(this.ruta3 + `/${id}`);
+  }
+
+  entradaId(id:string){
+    return this.http.get(this.ruta2 + `/${id}`);
+  }
+
 
 }

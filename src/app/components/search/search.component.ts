@@ -29,6 +29,7 @@ export class SearchComponent implements OnInit {
       console.log(formulario.value._id);
       this.o.buscarId(formulario.value._id)
       .subscribe(res=>{
+       
         this.c= res as Client;
         formulario.reset();
       });

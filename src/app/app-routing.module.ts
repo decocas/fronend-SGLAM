@@ -6,12 +6,14 @@ import { OutletComponent } from './components/outlet/outlet.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginGuard } from './guard/login.guard';
+import { ReportComponent } from './components/report/report.component';
 
 const routes: Routes = [ {path: 'manager', component: ManagerComponent ,canActivate:[LoginGuard] },
                          {path: 'receipt', component:ReceiptComponent ,canActivate:[LoginGuard] },
                          {path: 'outlet', component:OutletComponent, canActivate:[LoginGuard] },
                          {path: 'search', component:SearchComponent ,canActivate:[LoginGuard] },
-                         {path:  'login', component:LoginComponent}];
+                         {path: 'report', component:ReportComponent},
+                         {path: 'login', component:LoginComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
